@@ -1,41 +1,17 @@
-test_color_name_to_hex (__main__.TestExercice) ... FAIL
-test_compute_mse (__main__.TestExercice) ... FAIL
+test_color_name_to_hex (__main__.TestExercice) ... ok
+test_compute_mse (__main__.TestExercice) ... ERROR
 test_create_list (__main__.TestExercice) ... FAIL
 test_list_to_dict (__main__.TestExercice) ... ok
 
 ======================================================================
-FAIL: test_color_name_to_hex (__main__.TestExercice)
+ERROR: test_compute_mse (__main__.TestExercice)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "test_exercice.py", line 39, in test_color_name_to_hex
-    'Mauvaise reponse'
-AssertionError: Lists differ: [[], []] != [[('blue', '#0000FF'), ('red', '#FF0000'), [172 chars]A')]]
-
-First differing element 0:
-[]
-[('blue', '#0000FF'), ('red', '#FF0000'), [83 chars]FF')]
-
-- [[], []]
-+ [[('blue', '#0000FF'),
-+   ('red', '#FF0000'),
-+   ('green', '#008000'),
-+   ('yellow', '#FFFF00'),
-+   ('black', '#000000'),
-+   ('white', '#FFFFFF')],
-+  [('orange', '#FFA500'),
-+   ('blue', '#0000FF'),
-+   ('red', '#FF0000'),
-+   ('brown', '#A52A2A')]] : Mauvaise reponse
-
-======================================================================
-FAIL: test_compute_mse (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 65, in test_compute_mse
-    'Erreur dans le calcul des MSE'
-AssertionError: {} != {'LR': 220.6, 'DNN': 14.0, 'RF': 1681.8}
-- {}
-+ {'DNN': 14.0, 'LR': 220.6, 'RF': 1681.8} : Erreur dans le calcul des MSE
+  File "test_exercice.py", line 59, in test_compute_mse
+    output = exercice.compute_mse(value)
+  File "/home/runner/work/2021h-ch6-2-exercices-phhad/2021h-ch6-2-exercices-phhad/exercice.py", line 40, in compute_mse
+    for elem in model.valuee:
+NameError: name 'model' is not defined
 
 ======================================================================
 FAIL: test_create_list (__main__.TestExercice)
@@ -56,6 +32,6 @@ First extra element 9664:
 Diff is 89692 characters long. Set self.maxDiff to None to see it. : Mauvaise reponse
 
 ----------------------------------------------------------------------
-Ran 4 tests in 0.056s
+Ran 4 tests in 0.060s
 
-FAILED (failures=3)
+FAILED (failures=1, errors=1)
