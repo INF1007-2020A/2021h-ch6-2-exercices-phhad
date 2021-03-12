@@ -16,8 +16,10 @@ def list_to_dict(some_list: list) -> dict:
 
 def color_name_to_hex(colors: list) -> list:
     # TODO: Trouver la valeur hex de chaque couleur dans la liste et créer une liste de tupple où le premier élément est le nom de la couleur et le deuxième est la valeur hex
-
-    return []
+    list = []
+    for c in colors:
+        list.append((c, cnames[c]))
+    return list
 
 
 def create_list() -> list:
@@ -33,9 +35,13 @@ def create_list() -> list:
 
 def compute_mse(model_dict: dict) -> dict:
     # TODO: Calculer l'erreur quadratique moyen pour chaque modèle. Retourner un dictionnaire contenant les MSE.
+    for key, values in model_dict.items():
+        error = 0
+        for elem in model.valuee:
+            error += ((elem[1] - elem[0])**2)
 
-    return {}
-
+        model_dict[model_keys] = error / len(values)
+    return model_dict
 
 def main() -> None:
     some_list = ["a", "b", "z", "patate"]
